@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MapContainer from './components/MapContainer.js';
+import SearchContainer from './components/SearchContainer.js';
 import * as FoursquareData from './components/FoursqaureAPIfetch.js';
 const pos = {lat:22.550944,lng:88.354012};//{ lat: 51.49, lng: -0.005 };
 //22.550944,88.354012
@@ -51,6 +52,35 @@ handleLocationClicks = (e, location, id) => {
     })
   }
 }
+
+//updates locations depending on the search
+	  updateLocations = (searchResults, query) => {
+    if(searchResults) {
+      this.setState((state) => ({
+          locationsToUse: searchResults,
+		  zoom: 14,
+		  newCenter: { lat: 51.48, lng: -0.001 },
+		  locationsNotFound: false
+      }))
+
+	} else  {
+
+		this.setState({
+			locationsToUse: this.state.locations,
+			locationsNotFound: false
+		})
+
+
+   }
+
+  }
+
+		updateQuery = (query) => {
+			this.setState({
+			query: query
+		})
+	}
+
   render() {
     console.log(this.state.newCenter+this.state.zoom)
     console.log(this.state.locations)
@@ -76,6 +106,21 @@ handleLocationClicks = (e, location, id) => {
         isOpen = { this.state.isOpen }
         handleLocationClicks = {this.handleLocationClicks}
          />
+
+         <SearchContainer
+   			locations = { this.state.locations }
+   			locationsToUse = { this.state.locationsToUse }
+   			locationsNotFound = { this.state.locationsNotFound }
+   			handleLocationClicks = { this.handleLocationClicks }
+   			selectedLocation = { this.state.selectedLocation }
+   			onUserSearch= { this.updateLocations }
+   		/>
+
+      <footer>
+      <p>Developed by: Srinjoy Santra</p>
+      <p>Contact information: <a href="mailto:srinjoy_s@yahoo.com">
+  srinjoy_s@yahoo.com</a>.</p>
+      </footer>
       </div>
     );
   }
