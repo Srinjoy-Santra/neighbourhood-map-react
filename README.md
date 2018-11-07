@@ -1,5 +1,42 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Project Overview
+The project is a single page application featuring a map of [Park Street,Kolkata](https://en.wikipedia.org/wiki/Park_Street,_Kolkata) neighborhood. The functionalities to this map include highlighted locations (eating places), third-party data about those locations and various ways to browse the content.
+
+## How to run the application?
+
+- Clone the git repository:
+$ git clone https://github.com/Srinjoy-Santra/neighborhood-map-react
+
+- Change directory to the project, install npm and run the application:
+
+> npm install
+
+> npm start
+
+The npm start command will automatically open the application in the browser.
+
+- To start the service worker run:
+
+> npm run build
+
+> serve -s build
+
+Navigate to http://localhost:3000/.
+
+
+## Development Strategy
+
+- API key was obtained from Google Maps API.
+- Full screen map was added to the page.
+- Map Markers were dropped at a list of locations.
+- [FourSqaureAPI](https://developer.foursquare.com/) was used to fetch additional data for each such location
+- Search functionality was added for the locations.
+- Basic styling was done using CSS
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
