@@ -15,7 +15,7 @@ class App extends Component {
 		locationsToUse: [],
 		locationsNotFound: false,
 		newCenter:  pos ,
-		zoom: 13,
+		zoom: 17,
 		isOpen: false,
 		selectedLocation: {},
 		query: ''
@@ -92,12 +92,21 @@ handleLocationClicks = (e, location, id) => {
 
 
         </header>
+
+        <SearchContainer
+   			locations = { this.state.locations }
+   			locationsToUse = { this.state.locationsToUse }
+   			locationsNotFound = { this.state.locationsNotFound }
+   			handleLocationClicks = { this.handleLocationClicks }
+   			selectedLocation = { this.state.selectedLocation }
+   			onUserSearch= { this.updateLocations }
+   		/>
         <MapContainer
         newCenter={this.state.newCenter}
         zoom={this.state.zoom}
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_b8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `600px` }} />}
+        loadingElement={<div style={{ height: `` }} />}
+        containerElement={<div style={{ height: `` }} />}
         mapElement={<div aria-label="map container" tabIndex="0" role="application" style={{ height: `100%` }} />}
          isMarkerShown={false}
          selectedLocation = { this.state.selectedLocation }
@@ -107,19 +116,13 @@ handleLocationClicks = (e, location, id) => {
         handleLocationClicks = {this.handleLocationClicks}
          />
 
-         <SearchContainer
-   			locations = { this.state.locations }
-   			locationsToUse = { this.state.locationsToUse }
-   			locationsNotFound = { this.state.locationsNotFound }
-   			handleLocationClicks = { this.handleLocationClicks }
-   			selectedLocation = { this.state.selectedLocation }
-   			onUserSearch= { this.updateLocations }
-   		/>
+
 
       <footer>
       <p>Developed by: Srinjoy Santra</p>
       <p>Contact information: <a href="mailto:srinjoy_s@yahoo.com">
   srinjoy_s@yahoo.com</a>.</p>
+  <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
       </footer>
       </div>
     );
