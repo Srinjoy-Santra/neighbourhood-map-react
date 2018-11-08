@@ -4,10 +4,7 @@ import './App.css';
 import MapContainer from './components/MapContainer.js';
 import SearchContainer from './components/SearchContainer.js';
 import * as FoursquareData from './components/FoursqaureAPIfetch.js';
-const pos = {lat:22.550944,lng:88.354012};//{ lat: 51.49, lng: -0.005 };
-//22.550944,88.354012
-//lat: 22.471043, lng: 88.392445
-//22.471043,88.392445
+const pos = {lat:22.550944,lng:88.354012};
 
 class App extends Component {
   state = {
@@ -41,6 +38,7 @@ class App extends Component {
   })
 }
 
+//Handle clicks on locatins
 handleLocationClicks = (e, location, id) => {
   if(location !== undefined)
   {
@@ -86,7 +84,7 @@ handleLocationClicks = (e, location, id) => {
       isOpen: status
     })
   }
-  /*<img src={logo} className="App-logo" alt="logo" />*/
+
   render() {
     console.log(this.state.newCenter+this.state.zoom)
     console.log(this.state.locations)

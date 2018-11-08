@@ -2,22 +2,10 @@ import React, { Component } from 'react';
 import { Marker, InfoWindow  } from "react-google-maps"
 
 class MarkerContainer extends Component  {
-		state = {
-			animate: false
-		}
 
-		toggleAnimate()
-		{
-			if (this.state.animate !== false) {
-          this.setState({animate : true});
-        } else {
-					this.setState({animate : false});
-          //marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-		}
 
 		render() {
-			console.log(this.state.animate)
+
         return (
 
       ((!this.props.locationsNotFound)  &&
@@ -36,7 +24,7 @@ class MarkerContainer extends Component  {
 
 				{
 					this.props.updateIsOpen(false)
-				/*alert('Something has to happen here so infowindow can be reopened')*/}
+				}
 		}
 
 		 >

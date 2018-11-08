@@ -41,6 +41,7 @@ class SearchContainer extends Component {
 		return result
   }
 
+//Change query according to modified input
   handleTextAlters = (query, event) => {
 				this.updateQuery(query)
 				let result = this.searchLocations(query)

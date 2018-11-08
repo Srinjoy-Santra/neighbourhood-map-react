@@ -3,7 +3,6 @@ import React from 'react';
 import { compose } from 'recompose'
 import MarkerContainer from './MarkerContainer.js'
 
-//20.358824,85.83326 Patia
 
 const MapContainer = (props =>{
 
@@ -35,4 +34,3 @@ const MapContainer = (props =>{
 export default compose(
 	withScriptjs,
 	withGoogleMap)(MapContainer);
-//  {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
