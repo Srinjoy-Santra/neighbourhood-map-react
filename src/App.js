@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './restaurant.svg';
 import './App.css';
 import MapContainer from './components/MapContainer.js';
 import SearchContainer from './components/SearchContainer.js';
@@ -80,7 +80,13 @@ handleLocationClicks = (e, location, id) => {
 			query: query
 		})
 	}
-
+  updateIsOpen = (status) =>
+  {
+    this.setState({
+      isOpen: status
+    })
+  }
+  /*<img src={logo} className="App-logo" alt="logo" />*/
   render() {
     console.log(this.state.newCenter+this.state.zoom)
     console.log(this.state.locations)
@@ -105,15 +111,16 @@ handleLocationClicks = (e, location, id) => {
         newCenter={this.state.newCenter}
         zoom={this.state.zoom}
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_b8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
-        loadingElement={<div style={{ height: `` }} />}
-        containerElement={<div style={{ height: `` }} />}
-        mapElement={<div aria-label="map container" tabIndex="0" role="application" style={{ height: `100%` }} />}
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `700px` }} />}
+        mapElement={<div id="map-container" aria-label="map container" tabIndex="0" role="application" style={{ height: `100%`}} />}
          isMarkerShown={false}
          selectedLocation = { this.state.selectedLocation }
 				locations = { this.state.locationsToUse }
 				locationsNotFound = { this.state.locationsNotFound }
         isOpen = { this.state.isOpen }
         handleLocationClicks = {this.handleLocationClicks}
+        updateIsOpen ={this.updateIsOpen}
          />
 
 
@@ -122,7 +129,7 @@ handleLocationClicks = (e, location, id) => {
       <p>Developed by: Srinjoy Santra</p>
       <p>Contact information: <a href="mailto:srinjoy_s@yahoo.com">
   srinjoy_s@yahoo.com</a>.</p>
-  <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank" rel="noopener noreferrer">CC 3.0 BY</a></div>
       </footer>
       </div>
     );

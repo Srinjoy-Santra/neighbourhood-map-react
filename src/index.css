@@ -13,24 +13,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/*
 .App {
     display: grid;
     /*grid-template-areas:
                     'header header header header'
                     'search map map map'
                     'footer footer footer footer';
-    */
+    *
     grid-gap: 10px;
     background-color: #edeae5;
     padding: 10px;
     grid-template-rows: auto 600px;
-    grid-template-columns: auto 800px;
+    grid-template-columns: auto 600px;
 }
 
 
 MapContainer {
-/*  grid-area: map;*/
+/*  grid-area: map;*
   width: 100%;
   grid-column: 2/5;
   grid-row: 2/5;
@@ -38,7 +38,7 @@ MapContainer {
 }
 
 SearchContainer {
-  /*grid-area: search;*/
+  /*grid-area: search;*
   grid-column: 1/2;
   grid-row: 2/5;
 
@@ -47,6 +47,7 @@ SearchContainer {
 header {
   grid-area: header;
   height: 100px;
+  width:auto;
   grid-column: 1/5;
   grid-row: 1/2;
 }
@@ -80,4 +81,5 @@ footer{
   margin: 10px;
   padding: 20px;
   font-size: 30px;
-}*/
+}*
+*/

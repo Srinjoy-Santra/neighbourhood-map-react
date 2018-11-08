@@ -68,8 +68,7 @@ class SearchContainer extends Component {
           {((!this.props.locationsNotFound) && (this.props.locationsToUse.map(location =>(
             <ol key={location.id}
 								tabIndex="0"
-								onClick={(event) => this.props.handleLocationClicks
-                  (event, location.location, location.id)}
+								onClick={(event) => this.props.handleLocationClicks(event, location.location, location.id)}
 							>{location.name}
               <br/>
               {(this.props.selectedLocation === location.id ) && <span className='search-items-address'>

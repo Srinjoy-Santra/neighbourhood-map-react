@@ -18,7 +18,7 @@ const MapContainer = (props =>{
   										locationsNotFound = { props.locationsNotFound }
   										address = { eachLocation.location.formattedAddress}
   										onClick={(event) => props.handleLocationClicks(event, eachLocation.location, eachLocation.id)}
-
+                      updateIsOpen={props.updateIsOpen}
   									/>)
   return (
     <GoogleMap
