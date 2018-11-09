@@ -134,20 +134,24 @@ footer a{
 
 header {
   grid-column: 1/5;
+  min-height: 150px;
+  justify-content: center;
 }
 
 #map-container{
 	grid-row: 2/3;
 	grid-column: 3/5;
 	min-height: 660px;
-  min-width: 50vw;
+  width: 40vw;
+
   padding: 0px;
-  margin-left: 10vw;
+  margin: 0px;
+  margin-left: 40vw;
 }
 
 #search-container {
 	grid-column: 1/3;
-  min-width: 30vw;
+  min-width: 40vw;
   padding: 0px;
 }
 
@@ -172,6 +176,7 @@ footer {
 	grid-row: 2/3;
 	grid-column: 1/4;
 	min-height: 660px;
+  min-width: 100vw;
 }
 
 #search-container {

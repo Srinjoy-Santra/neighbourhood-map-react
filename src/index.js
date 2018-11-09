@@ -10,3 +10,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.register();
+
+//check whether Google Map has loaded or not
+function gm_authFailure() {
+   alert('Google Map unable to load!'); };
+
+gm_authFailure();

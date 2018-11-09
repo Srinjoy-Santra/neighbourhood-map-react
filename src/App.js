@@ -19,12 +19,19 @@ class App extends Component {
 
 	}
 
+
+
   componentDidMount(){
     function handleError(response){
       if(response.ok)
         throw Error(response.statusText);
       return response;
     }
+
+
+ window.gm_authFailure = function () {
+   alert("Sorry, couldn't load Google Maps...");
+ }
 
   //update locations from Foursquare api
   FoursquareData.getAllPlaces().then(handleError)
@@ -37,6 +44,7 @@ class App extends Component {
     alert('Error occurred when loading Foursquare data. Unable to display locations')
   })
 }
+
 
 //Handle clicks on locatins
 handleLocationClicks = (e, location, id) => {
@@ -88,6 +96,7 @@ handleLocationClicks = (e, location, id) => {
   render() {
     console.log(this.state.newCenter+this.state.zoom)
     console.log(this.state.locations)
+
     return (
       <div className="App">
         <header className="App-header">
@@ -108,20 +117,19 @@ handleLocationClicks = (e, location, id) => {
         <MapContainer
         newCenter={this.state.newCenter}
         zoom={this.state.zoom}
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_b8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `700px` }} />}
         mapElement={<div id="map-container" aria-label="map container" tabIndex="0" role="application" style={{ height: `100%`}} />}
          isMarkerShown={false}
-         selectedLocation = { this.state.selectedLocation }
+        selectedLocation = { this.state.selectedLocation }
 				locations = { this.state.locationsToUse }
 				locationsNotFound = { this.state.locationsNotFound }
         isOpen = { this.state.isOpen }
         handleLocationClicks = {this.handleLocationClicks}
         updateIsOpen ={this.updateIsOpen}
+
          />
-
-
 
       <footer>
       <p>Developed by: Srinjoy Santra</p>

@@ -4,7 +4,10 @@ import { compose } from 'recompose'
 import MarkerContainer from './MarkerContainer.js'
 
 
+
 const MapContainer = (props =>{
+
+
 
   const markers = props.locations.map(eachLocation =>
     <MarkerContainer
@@ -19,10 +22,12 @@ const MapContainer = (props =>{
   										onClick={(event) => props.handleLocationClicks(event, eachLocation.location, eachLocation.id)}
                       updateIsOpen={props.updateIsOpen}
   									/>)
+
   return (
     <GoogleMap
       defaultZoom={props.zoom}
       defaultCenter={props.newCenter}
+      handleError={props.handleError}
     >
     {markers}
 

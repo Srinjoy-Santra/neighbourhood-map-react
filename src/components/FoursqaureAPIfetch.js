@@ -1,4 +1,3 @@
-
 //error handler
 function handleErrors(response) {
     if (!response.ok) {
