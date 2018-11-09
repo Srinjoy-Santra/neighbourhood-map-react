@@ -28,7 +28,7 @@ class App extends Component {
       return response;
     }
 
-
+//check whether Google Map has loaded or not
  window.gm_authFailure = function () {
    alert("Sorry, couldn't load Google Maps...");
  }
@@ -117,7 +117,7 @@ handleLocationClicks = (e, location, id) => {
         <MapContainer
         newCenter={this.state.newCenter}
         zoom={this.state.zoom}
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgUWR_b8wrF5e1jOTwQnQ5wrtuwPdZDd0&v=3.exp&libraries=geometry,drawing,places`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `700px` }} />}
         mapElement={<div id="map-container" aria-label="map container" tabIndex="0" role="application" style={{ height: `100%`}} />}
