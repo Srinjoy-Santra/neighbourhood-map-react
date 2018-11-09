@@ -177,6 +177,7 @@ footer {
 	grid-column: 1/4;
 	min-height: 660px;
   min-width: 100vw;
+  margin-left: 0px;
 }
 
 #search-container {
