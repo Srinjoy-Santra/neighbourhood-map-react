@@ -81,4 +81,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Screenshot
-![Sample Demo] (https://github.com/Srinjoy-Santra/neighbourhood-map-react/blob/master/screenshot.PNG)
+![Sample Demo](https://github.com/Srinjoy-Santra/neighbourhood-map-react/blob/master/screenshot.PNG)
